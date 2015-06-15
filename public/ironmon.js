@@ -10,6 +10,10 @@
 */
 var Ironmon = function(name) {
 
+  this.name = name
+  this.health = 25
+  this.power = 1
+
 }
 
 /*
@@ -22,6 +26,14 @@ var Ironmon = function(name) {
 */
 Ironmon.prototype.heal = function() {
 
+  var random = Math.floor(Math.random() * 5) + 1
+
+  this.health += random
+
+  if (this.health > 25) {
+    this.health = 25
+  }
+
 }
 
 /*
@@ -29,6 +41,7 @@ Ironmon.prototype.heal = function() {
 */
 Ironmon.prototype.train = function() {
 
+  this.power += 1
 }
 
 /*
@@ -38,6 +51,11 @@ Ironmon.prototype.train = function() {
 */
 Ironmon.prototype.active = function() {
 
+  if (this.health > 0) {
+    return true
+  }
+
+  return false
 }
 
 /*
@@ -49,5 +67,11 @@ Ironmon.prototype.active = function() {
   This function returns the amount of damage dealt.
 */
 Ironmon.prototype.attack = function(opponent) {
+
+  var hitPoint = Math.floor(Math.random() * this.power) + 1
+
+  opponent.health -= hitPoint
+
+  return hitPoint
   
 }
