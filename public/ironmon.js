@@ -9,7 +9,9 @@
     - name
 */
 var Ironmon = function(name) {
-
+  this.name = name
+  this.health = 25
+  this.power = 1
 }
 
 /*
@@ -21,6 +23,14 @@ var Ironmon = function(name) {
     make the Ironmon's health go above 25, it becomes 25 instead.
 */
 Ironmon.prototype.heal = function() {
+  healAmount = Math.floor(Math.random()*5+1)
+
+  if ((this.health + healAmount) > 25) {
+    this.health = 25
+  } else {
+    this.health += healAmount
+  }
+
 
 }
 
@@ -28,7 +38,7 @@ Ironmon.prototype.heal = function() {
   This function adds one to the power of the Ironmon.
 */
 Ironmon.prototype.train = function() {
-
+  this.power += 1
 }
 
 /*
@@ -37,7 +47,11 @@ Ironmon.prototype.train = function() {
   Otherwise, it returns false.
 */
 Ironmon.prototype.active = function() {
-
+  if (this.health > 0) {
+    return true
+  } else {
+    return false
+  }
 }
 
 /*
@@ -50,4 +64,10 @@ Ironmon.prototype.active = function() {
 */
 Ironmon.prototype.attack = function(opponent) {
   
+  damage = Math.floor(Math.random()*this.power + 1)
+
+  opponent.health -= damage
+
+  return damage
+
 }
