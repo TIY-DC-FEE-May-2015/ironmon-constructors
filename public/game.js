@@ -12,9 +12,10 @@
 */
 var Game = function(leftName, rightName) {
 	this.turn = true
-	this.left = new Ironmon(leftName) 
-	this.right = new Ironmon(rightName)
-
+	//this.left = new Ironmon(leftName) 
+	//this.right = new Ironmon(rightName)
+	this.left = templates.left
+	this.right = templates.right
 }
 
 
@@ -30,5 +31,4 @@ Game.prototype.takeTurn = function() {
 		this.turn = true
 	}
 }
-
 

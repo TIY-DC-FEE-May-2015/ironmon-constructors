@@ -1,0 +1,46 @@
+
+
+.stats {
+	padding: 15px;
+	font-family: arial;
+	width: 200px;
+	border-radius: 30px;
+	display: inline-block;
+}
+
+.water {
+	background-color: RGB(33, 138, 231);
+}
+
+.fire {
+	background-color: RGB(251, 58, 33);
+}
+
+.grass {
+	background-color: RGB(111, 126, 44);
+}
+
+.fighterSelection {
+	display: none;
+}
+
+.fighterSelection.active {
+	display: block;
+}
+
+.ready {
+	display: none;
+}
+
+.ready.active {
+	display: block;
+	background-color: gray;
+}
+
+.controls {
+	display: none;
+}
+
+.controls.active {
+	display: block;
+}
