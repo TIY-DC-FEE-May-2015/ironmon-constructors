@@ -61,16 +61,19 @@ Ironmon.prototype.active = function() {
 Ironmon.prototype.attack = function(opponent) {
   var before = opponent.health;
     if (this.type === "fire" && opponent.type === "grass") {
-      opponent.health -= (Math.floor(Math.random() * opponent.power) + 1);
+      opponent.health -= ((Math.floor(Math.random() * opponent.power) + 1) * 2);
       var attack = before - opponent.health;
+      return attack;
     }
     if (this.type === "water" && opponent.type === "fire") {
-      opponent.health -= (Math.floor(Math.random() * opponent.power) + 1);
+      opponent.health -= ((Math.floor(Math.random() * opponent.power) + 1) * 2);
       var attack = before - opponent.health;
+      return attack;
     }
      if (this.type === "grass" && opponent.type === "water") {
-      opponent.health -= (Math.floor(Math.random() * opponent.power) + 1);
+      opponent.health -= ((Math.floor(Math.random() * opponent.power) + 1) * 2);
       var attack = before - opponent.health;
+      return attack;
     }
     opponent.health -= (Math.floor(Math.random() * opponent.power) + 1);
     var attack = before - opponent.health;
