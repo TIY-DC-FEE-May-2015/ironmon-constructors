@@ -1,3 +1,8 @@
+//TODO:
+//ticker box to describe what's happening
+	//indicator of who's turn it is
+//SFX on action
+
 var game
 var templates = {}
 
@@ -11,18 +16,31 @@ var deathCheck = function(side) {
 			winner = templates.left
 		}
 
+		$(".marquee").toggleClass("active").text("GAME OVER")
+
 		alert(winner.name+" has viciously defeated "+loser.name)
 		$(".fighterSelection").toggleClass("active")
 		$(".controls").toggleClass("active")
+
+		tick = new Date()
+		date = tick.toLocaleDateString()
 
 		var $htmlString = templates.winners({
 			winner: winner.name,
 			loser: loser.name,
 			winnerHealth: winner.health,
-			loserHealth: loser.health
+			loserHealth: loser.health,
+			date: date,
 		})
 
-		$(".winnerBoard").append($htmlString)
+		templates.right = {};
+		templates.left = {}
+
+		$(".stats").text("")
+		$(".winnerBoard").prepend($htmlString)
+
+		$("input[value=right]").removeAttr("checked")
+		$("input[value=left]").prop("checked", "checked")
 
 	}
 }
@@ -40,10 +58,6 @@ var addIronmon = function() {
 	var name = $("#name").val()
 	var type = $("#type").val()
 	var side = $("input[name=side]:checked").val()
-	
-	if (side === undefined) {
-		alert("Please choose a player side")
-	}
 
 	templates[side] = new Ironmon(name, type)
 	
@@ -57,10 +71,6 @@ var addIronmon = function() {
 	updateDisplay(side)
 
 	$(".stats."+side+"").addClass(type)
-
-	if (templates.left && templates.right) {
-		$(".ready").addClass("active")
-	}
 
 	$("#name").focus().select()
 }
@@ -84,13 +94,17 @@ $(document).on("ready", function(){
 		addIronmon()
 		$("input[value=left]").removeAttr("checked")
 		$("input[value=right]").prop("checked", "checked")
-
+		if (templates.left.name && templates.right.name) {
+			$(".ready").addClass("active")
+		}
 	})
 
 	$(".ready").on("click", function(){
 		$(".fighterSelection").toggleClass("active")
 		$(".controls").toggleClass("active")
+		$(".marquee").toggleClass("active")
 		game = new Game()
+		$(this).toggleClass("active")
 	})
 
 	$("#attack").on("click", function(){
