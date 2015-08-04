@@ -1,0 +1,167 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background: radial-gradient(RGB(214,214,214), RGB(155,155,155));
+	font-family: tahoma;
+}
+
+h3 {
+	font-family: "Press Start 2P";
+	text-align: center;
+}
+
+button {
+	margin: 0 20px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 600px;
+}
+
+.playingField {
+	background-color: white;
+	height: 400px;
+	margin: 20px 10px 0px 10px;
+}
+
+.marquee {
+	height: 0;
+	font-size: 0;
+	position: absolute;
+	top: 145px;
+	margin: 0 auto;
+	width: 580px;
+}
+
+.marquee.active {
+	height: 40px;
+	background: crimson;
+	border-top: darkgreen solid 5px;
+	border-bottom:  darkgreen solid 5px;
+	font-family: "Press Start 2P";
+	text-align: center;
+	color: white;
+	line-height: 35px;
+	font-size: 15px;
+}
+
+.players {
+	margin: 0 20px;
+}
+
+.player {
+	display: inline-block;
+	height: 260px;
+	width: 250px;
+	margin: 20px;
+}
+
+.player.left.active {
+	background-image: url("assets/fighter1.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.player.right.active {
+	background-image: url("assets/fighter2.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.stats {
+	padding: 7px;
+	font-family: arial;
+	width: 200px;
+	border-radius: 30px;
+	display: inline-block;
+	transition: all .5s;
+}
+
+.left {
+	float: left;
+	margin-left: 20px;
+}
+
+.right {
+	float: right;
+	margin-right: 20px;
+}
+
+.playStats {
+	text-align: center;
+}
+
+.name {
+	font-family: cursive;
+	font-size: 19px;
+}
+
+.none {
+	background-color: rgba(155,155,155, .8);
+}
+
+.water {
+	background-color: RGBA(33, 138, 231, .8);
+}
+
+.fire {
+	background-color: RGBA(251, 58, 33, .8);
+}
+
+.grass {
+	background-color: RGBA(111, 126, 44, .8);
+}
+
+.interface {
+	text-align: center;
+	background-color: tan;
+	line-height: 40px;
+}
+
+.fighterSelection {
+	display: none;
+}
+
+.fighterSelection.active {
+	display: block;
+	transition: height .5s;
+}
+
+.ready {
+	display: none;
+}
+
+.ready.active {
+	display: block;
+	background-color: gray;
+	margin: 0 auto;
+	font-size: 14px;
+	padding: 2px;
+}
+
+.controls {
+	display: none;
+}
+
+.controls.active {
+	display: block;
+	font-size: 20px;
+	transition: height .5s;
+}
+
+#attack, #train, #heal {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.champions {
+	background-color: RGB(249, 226, 200);
+	margin: 0 10px;
+	padding: 20px;
+	height: 100vh;
+}

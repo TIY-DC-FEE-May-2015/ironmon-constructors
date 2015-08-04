@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="gameplay.css">
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+<header>
+</header>
+
+<main>
+
+<div class="container">
+	<div class="playingField">
+		<div class="marquee active">CHOOSE YOUR FIGHTER</div>
+		<div class="player left"></div>
+		<div class="player right"></div>	
+		<div class="players">
+			<div class="stats left"></div>
+			<div class="stats right"></div>
+		</div>
+	</div>
+
+
+	<div class="interface">
+		<div class="fighterSelection active">
+			<input type="radio" value="left" name="side" class="select" checked>Left
+			<input type="radio" value="right" name="side" class="select">Right
+			
+			<input type="text" id="name" placeholder="fighter name" class="select" maxlength="20"></input>
+			
+			Pick a type: <select id="type" class="select">
+			<option value="none">None</option>
+			<option value="water">Water</option>
+			<option value="fire">Fire</option>
+			<option value="grass">Grass</option>
+			<input type="submit" id="submit-fighter">
+			
+			</select>
+			<button class="ready">Ready to Play?</button>
+		</div>
+
+		<div class="controls">
+			<div id="attack"><img src="assets/attack.png"></div>
+			<div id="heal"><img src="assets/heal.png"></div>
+			<div id="train"><img src="assets/train.png"></div>
+		</div>
+	</div>
+
+	<div class="champions">
+		<h3>Hall of Champions</h3>
+		<ul class="winnerBoard">
+		</ul>
+	</div>
+</div>
+</main>
+
+
+<template id="playerTemplate">
+	<div class="playStats">
+		<div class="name">{{name}}</div>
+
+		<div class="health">HP: {{health}}</div>
+		<div class="power">Power: {{power}}</div>
+	</div>
+</template>
+
+<template id="winnerTemplate">
+	
+	<li class="winnerStats">
+	{{winner}} defeats {{loser}}, {{winnerHealth}} to {{loserHealth}} on {{date}}
+	</li>
+
+</template>
+
+
+
+	<script type="text/javascript" src="libs/handlebars.js"></script>
+	<script type="text/javascript" src="libs/jquery.js"></script>
+	<script type="text/javascript" src="gameplay.js"></script>
+	<script type="text/javascript" src="ironmon.js"></script>
+    <script src="game.js"></script>
+
+</body>
+</html>

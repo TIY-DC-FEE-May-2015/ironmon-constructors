@@ -1,0 +1,12 @@
+#leftSide {
+	width: 40px;
+	border: solid black 1px;
+	display: inline-block;
+}
+
+#rightSide {
+	width: 40px;
+	border: solid green 1px;
+	display: inline-block;
+	margin-left: 10px;
+}
