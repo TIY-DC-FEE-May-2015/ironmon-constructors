@@ -61,13 +61,14 @@ var addIronmon = function() {
 
 	templates[side] = new Ironmon(name, type)
 	
+	$(".player."+side).toggleClass("active")
+
 	if (templates.right) {
 		if (templates.right.name === templates.left.name) {
 			templates.right.name = name+" the second"
 		}
 	}
 
-	console.log(templates)
 	updateDisplay(side)
 
 	$(".stats."+side+"").addClass(type)

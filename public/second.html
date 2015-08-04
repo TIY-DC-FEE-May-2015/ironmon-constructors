@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="second.css">
+</head>
+<body>
+
+	<div id="leftSide">
+	</div>
+
+	<div id="rightSide">
+	</div>
+
+	<template id="leftSideBook">
+		<div class="left-Book">
+			<div class="title">{{ title }}
+		</div>
+	</template>
+
+	<template id="rightSideBook">
+		<div class="right-Book">
+			<div class="title">Title: {{title}}</div>
+			<div class="author">Authoer: {{author}}</div>
+			<div class="description">Description: {{description}}</div>
+		</div>
+	</template>
+<script type="text/javascript" src="libs/jquery.js"></script>
+<script type="text/javascript" src="libs/underscore.js"></script>
+<script type="text/javascript" src="libs/handlebars.js"></script>
+<script type="second.js"></script>
+
+</body>
+</html>

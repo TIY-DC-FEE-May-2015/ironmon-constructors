@@ -61,6 +61,18 @@ button {
 	margin: 20px;
 }
 
+.player.left.active {
+	background-image: url("assets/fighter1.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.player.right.active {
+	background-image: url("assets/fighter2.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
 .stats {
 	padding: 7px;
 	font-family: arial;

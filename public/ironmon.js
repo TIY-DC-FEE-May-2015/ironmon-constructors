@@ -69,7 +69,7 @@ Ironmon.prototype.attack = function(opponent) {
   damage = Math.floor(Math.random()*this.power + 1)
 
   if ((this.type === "water" && opponent.type === "fire") || (this.type === "fire" && opponent.type === "grass") || (this.type === "grass" && opponent.type === "water")) {
-    damage = damage *2
+    damage = damage * 1.3
   }
 
   opponent.health -= damage
