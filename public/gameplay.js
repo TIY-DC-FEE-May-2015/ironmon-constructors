@@ -6,6 +6,24 @@
 var game
 var templates = {}
 
+function typeOut(string){
+	$("#readout").text("")
+	var letter = 0
+	var d = new Date
+	var timeCheck = setInterval(function(){ 
+		if (Date.now() - d > 45 ) {
+			d = new Date	
+			$("#readout").append(string[letter])
+			letter+=1	
+		}
+		if (letter > string.length) {
+			clearInterval(timeCheck)
+		}
+	}, 10)
+
+
+}
+
 var deathCheck = function(side) {
 
 	if (templates[side].active() === false) {
@@ -49,6 +67,9 @@ var updateDisplay = function(side) {
 	var $htmlString = templates.stats(templates[side])
 
 	$(".stats."+side+"").html($htmlString)	
+	var prehealth = $(".stats."+side+"").find("health").text()
+	$(".stats."+side+"").find("health").text( Math.round(prehealth) )
+
 //	$(".stats.left").html(templates.left)
 //	$(".stats.right").html(templates.right)
 	deathCheck(side)

@@ -1,4 +1,4 @@
-/*
+    /*
   This class represents a character in a video game.
 
   It contains two default properties:
@@ -73,6 +73,8 @@ Ironmon.prototype.attack = function(opponent) {
   }
 
   opponent.health -= damage
+  opponent.health = Math.round(opponent.health * 10)
+  opponent.health =  opponent.health / 10
 
   return damage
 
